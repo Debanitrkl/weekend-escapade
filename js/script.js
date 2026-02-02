@@ -25,13 +25,13 @@
         animationDuration: 200,     // ms for dodge animation
     };
 
-    // Hints to show after dodges - personalized for Ayushi
+    // Hints to show after dodges - dark series inspired
     const hints = [
-        "That button is shy, Ayushi...",
-        "It keeps running away!",
-        "Maybe it knows something...",
-        "Almost! ...not quite.",
-        "Just say yes already!"
+        "Some choices aren't yours to make.",
+        "The button knows your fate.",
+        "You can't escape what's meant to be.",
+        "Resistance is... poetic, but futile.",
+        "The universe has decided."
     ];
 
     /**
@@ -137,7 +137,7 @@
         if (dodgeCount >= config.maxDodges) {
             noButton.classList.add('shrinking');
             isFixed = true;
-            hintText.textContent = "Come on, you know you want to...";
+            hintText.textContent = "Accept your destiny.";
         }
 
         // Reset dodging flag after animation

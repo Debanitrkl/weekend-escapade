@@ -1,44 +1,37 @@
 /* =====================================================
    SILICON LOVE - Elegant Die/Wafer Aesthetic
    For Ayushi - Kerala Trip Invitation
+   Dark Series Vibes
    ===================================================== */
 
-/* CSS Variables */
 :root {
-    /* Silicon Wafer Colors - Authentic tones */
-    --wafer-deep: #1a1625;
-    --wafer-purple: #2d2640;
-    --wafer-blue: #1e2a4a;
-    --wafer-shimmer: #3d3560;
+    /* Silicon Wafer Colors */
+    --wafer-deep: #0f0d15;
+    --wafer-purple: #1a1625;
+    --wafer-shimmer: #252035;
 
-    /* Die Surface Colors */
-    --die-surface: #252035;
-    --die-pattern: rgba(100, 80, 160, 0.08);
+    /* Die Surface */
+    --die-surface: #1a1625;
 
     /* Gold - Wire Bonding */
-    --gold-dark: #b8960c;
-    --gold: #d4af37;
-    --gold-light: #f0d060;
-    --gold-glow: rgba(212, 175, 55, 0.4);
+    --gold-dark: #8a7209;
+    --gold: #c9a227;
+    --gold-light: #dbb83d;
+    --gold-glow: rgba(201, 162, 39, 0.25);
 
-    /* Accent Colors */
-    --rose: #e8a4b8;
-    --rose-soft: #f5d0db;
-    --rose-glow: rgba(232, 164, 184, 0.3);
+    /* Accent */
+    --rose: #c79aa8;
+    --rose-muted: #a07a88;
 
     /* Text */
-    --text-primary: #f5f3f7;
-    --text-secondary: #b8b0c8;
-    --text-muted: #7a7090;
-
-    /* Success */
-    --success: #7dd3a8;
-    --success-glow: rgba(125, 211, 168, 0.4);
+    --text-primary: #e8e4ed;
+    --text-secondary: #9a92a8;
+    --text-muted: #5c566b;
 
     /* Typography */
-    --font-elegant: 'Cormorant Garamond', 'Georgia', serif;
-    --font-display: 'Playfair Display', 'Georgia', serif;
-    --font-mono: 'Space Mono', 'Courier New', monospace;
+    --font-elegant: 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono: 'Space Mono', monospace;
 
     /* Spacing */
     --space-xs: 0.25rem;
@@ -59,7 +52,6 @@
 html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -72,7 +64,7 @@ body {
 }
 
 /* =====================================================
-   SILICON WAFER BACKGROUND
+   BACKGROUND - Static Silicon Wafer
    ===================================================== */
 
 .wafer-bg {
@@ -82,67 +74,29 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    overflow: hidden;
 }
 
-/* Wafer Gradient - Mimics light refraction on silicon */
 .wafer-gradient {
     position: absolute;
-    width: 150%;
-    height: 150%;
-    top: -25%;
-    left: -25%;
+    width: 100%;
+    height: 100%;
     background:
-        radial-gradient(ellipse at 30% 20%, rgba(80, 60, 140, 0.3) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 80%, rgba(40, 80, 120, 0.25) 0%, transparent 45%),
-        radial-gradient(ellipse at 50% 50%, var(--wafer-purple) 0%, var(--wafer-deep) 70%);
-    animation: shimmer 15s ease-in-out infinite;
+        radial-gradient(ellipse at 30% 20%, rgba(60, 45, 100, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(30, 50, 80, 0.3) 0%, transparent 45%),
+        var(--wafer-deep);
 }
 
-@keyframes shimmer {
-    0%, 100% { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(2deg) scale(1.02); }
-}
-
-/* Die Grid Pattern - Authentic chip layout look */
 .die-grid {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.4;
-    background-image:
-        /* Main grid */
-        linear-gradient(90deg, rgba(100, 80, 160, 0.1) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(100, 80, 160, 0.1) 1px, transparent 1px),
-        /* Secondary finer grid */
-        linear-gradient(90deg, rgba(100, 80, 160, 0.05) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(100, 80, 160, 0.05) 1px, transparent 1px);
-    background-size:
-        80px 80px,
-        80px 80px,
-        20px 20px,
-        20px 20px;
-}
-
-/* Wafer Notch - Orientation marker */
-.wafer-notch {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 8px;
-    background: var(--wafer-shimmer);
-    border-radius: 4px 4px 0 0;
     opacity: 0.3;
-}
-
-/* Celebration background variant */
-.celebration-bg .wafer-gradient {
-    background:
-        radial-gradient(ellipse at 30% 20%, rgba(125, 211, 168, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 80%, rgba(232, 164, 184, 0.15) 0%, transparent 45%),
-        radial-gradient(ellipse at 50% 50%, var(--wafer-purple) 0%, var(--wafer-deep) 70%);
+    background-image:
+        linear-gradient(90deg, rgba(80, 65, 120, 0.15) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(80, 65, 120, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80, 65, 120, 0.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(80, 65, 120, 0.06) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
 }
 
 /* =====================================================
@@ -156,11 +110,10 @@ body {
     align-items: center;
     justify-content: center;
     padding: var(--space-lg);
-    position: relative;
 }
 
 /* =====================================================
-   DIE FRAME - Main Card (Page 1)
+   DIE FRAME - Main Card
    ===================================================== */
 
 .die-frame {
@@ -170,7 +123,7 @@ body {
     width: 100%;
 }
 
-/* Bond Pads - Gold connection points */
+/* Bond Pads */
 .bond-pads {
     position: absolute;
     display: flex;
@@ -181,7 +134,6 @@ body {
 .bond-pads.top, .bond-pads.bottom {
     left: 20px;
     right: 20px;
-    flex-direction: row;
 }
 
 .bond-pads.top { top: 0; }
@@ -197,65 +149,43 @@ body {
 .bond-pads.right { right: 0; }
 
 .pad {
-    width: 10px;
-    height: 10px;
-    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
-    border-radius: 2px;
-    box-shadow: 0 0 8px var(--gold-glow);
-}
-
-.bond-pads.left .pad,
-.bond-pads.right .pad {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+    border-radius: 1px;
+    box-shadow: 0 0 6px var(--gold-glow);
 }
 
 /* Die Surface */
 .die-surface {
     position: relative;
     background: var(--die-surface);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(201, 162, 39, 0.2);
     padding: var(--space-xl) var(--space-lg);
     overflow: hidden;
 }
 
-/* Internal die pattern */
 .die-pattern {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.5;
+    opacity: 0.4;
     background-image:
-        /* Horizontal traces */
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 30px,
-            rgba(100, 80, 160, 0.03) 30px,
-            rgba(100, 80, 160, 0.03) 31px
-        ),
-        /* Vertical traces */
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 40px,
-            rgba(100, 80, 160, 0.03) 40px,
-            rgba(100, 80, 160, 0.03) 41px
-        );
+        repeating-linear-gradient(0deg, transparent, transparent 35px, rgba(80, 65, 120, 0.04) 35px, rgba(80, 65, 120, 0.04) 36px),
+        repeating-linear-gradient(90deg, transparent, transparent 45px, rgba(80, 65, 120, 0.04) 45px, rgba(80, 65, 120, 0.04) 46px);
 }
 
-/* Die corner marker */
 .die-corner {
     position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 6px;
-    height: 6px;
+    bottom: 10px;
+    right: 10px;
+    width: 5px;
+    height: 5px;
     background: var(--gold);
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .content-wrapper {
@@ -265,23 +195,47 @@ body {
 }
 
 /* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes softGlow {
+    0%, 100% { box-shadow: 0 0 20px var(--gold-glow); }
+    50% { box-shadow: 0 0 35px var(--gold-glow); }
+}
+
+/* =====================================================
    TYPOGRAPHY - Page 1
    ===================================================== */
 
 .greeting {
     font-family: var(--font-elegant);
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-md);
-    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-lg);
+    letter-spacing: 1px;
+    animation: fadeDown 0.8s ease-out both;
 }
 
 .greeting .name {
     font-family: var(--font-display);
     font-style: italic;
     color: var(--rose);
-    font-weight: 400;
+    font-size: 1.4rem;
 }
 
 .main-title {
@@ -291,10 +245,11 @@ body {
 .main-title .line-1 {
     display: block;
     font-family: var(--font-elegant);
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-style: italic;
     color: var(--text-secondary);
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--space-sm);
+    animation: fadeUp 0.8s ease-out 0.2s both;
 }
 
 .main-title .line-2 {
@@ -304,10 +259,7 @@ body {
     font-weight: 600;
     color: var(--text-primary);
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--text-primary) 0%, var(--gold-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    animation: fadeUp 0.8s ease-out 0.4s both;
 }
 
 /* Date Display */
@@ -317,17 +269,18 @@ body {
     justify-content: center;
     gap: var(--space-md);
     margin-bottom: var(--space-xl);
+    animation: fadeIn 0.8s ease-out 0.6s both;
 }
 
 .date-line {
-    width: 30px;
+    width: 40px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
 }
 
 .date-text {
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--gold);
     letter-spacing: 1px;
 }
@@ -342,17 +295,15 @@ body {
     gap: var(--space-md);
     align-items: center;
     min-height: 130px;
-    position: relative;
 }
 
 .btn {
-    position: relative;
     border: none;
-    border-radius: 4px;
+    border-radius: 2px;
     cursor: pointer;
     font-family: var(--font-elegant);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -361,27 +312,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 54px;
-    background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-light) 100%);
+    width: 160px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
     color: var(--wafer-deep);
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    box-shadow:
-        0 4px 20px var(--gold-glow),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px var(--gold-glow);
+    animation: fadeUp 0.6s ease-out 0.8s both, softGlow 3s ease-in-out 1.5s infinite;
 }
 
 .btn-yes:hover {
     transform: translateY(-2px);
-    box-shadow:
-        0 6px 30px var(--gold-glow),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.btn-yes:active {
-    transform: translateY(0);
+    box-shadow: 0 6px 25px var(--gold-glow);
 }
 
 /* NO Button */
@@ -389,14 +333,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 38px;
+    width: 90px;
+    height: 36px;
     background: transparent;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     border: 1px solid var(--text-muted);
     transition: all 0.15s ease-out;
     z-index: 10;
+    animation: fadeIn 0.6s ease-out 1s both;
 }
 
 .btn-no:hover {
@@ -410,8 +355,8 @@ body {
 }
 
 .btn-no.shrinking {
-    transform: scale(0.8);
-    opacity: 0.4;
+    transform: scale(0.7);
+    opacity: 0.3;
 }
 
 /* Hint Text */
@@ -419,7 +364,7 @@ body {
     font-family: var(--font-elegant);
     font-size: 0.9rem;
     font-style: italic;
-    color: var(--rose);
+    color: var(--rose-muted);
     min-height: 1.4em;
     margin-top: var(--space-sm);
 }
@@ -429,50 +374,19 @@ body {
    ===================================================== */
 
 .celebration-container {
-    padding: var(--space-xl) var(--space-lg);
-    gap: var(--space-lg);
+    padding: var(--space-2xl) var(--space-lg);
+    gap: var(--space-xl);
 }
 
-#confettiCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 100;
-}
-
-/* Success Chip */
-.success-chip {
-    margin-bottom: var(--space-md);
-}
-
-.check-icon {
-    width: 70px;
-    height: 70px;
-}
-
-.check-icon circle {
-    stroke: var(--success);
-    stroke-dasharray: 176;
-    stroke-dashoffset: 176;
-    animation: drawCircle 0.6s ease-out 0.2s forwards;
-}
-
-.check-icon path {
-    stroke: var(--success);
-    stroke-dasharray: 50;
-    stroke-dashoffset: 50;
-    animation: drawCheck 0.4s ease-out 0.7s forwards;
-}
-
-@keyframes drawCircle {
-    to { stroke-dashoffset: 0; }
-}
-
-@keyframes drawCheck {
-    to { stroke-dashoffset: 0; }
+/* Tagline */
+.tagline {
+    font-family: var(--font-elegant);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--rose-muted);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 1px;
+    animation: fadeDown 0.8s ease-out both;
 }
 
 /* Celebration Title */
@@ -481,60 +395,38 @@ body {
     margin-bottom: var(--space-lg);
 }
 
-.celebration-title .line-small {
-    display: block;
-    font-family: var(--font-elegant);
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--rose);
-    margin-bottom: var(--space-xs);
-    animation: fadeUp 0.5s ease-out 0.3s both;
-}
-
 .celebration-title .line-big {
     display: block;
     font-family: var(--font-display);
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--text-primary);
-    animation: fadeUp 0.5s ease-out 0.5s both;
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    animation: fadeUp 0.8s ease-out 0.3s both;
 }
 
 /* Destination Card */
 .destination-card {
-    max-width: 340px;
+    max-width: 320px;
     width: 100%;
-    animation: fadeUp 0.6s ease-out 0.7s both;
+    animation: fadeUp 0.8s ease-out 0.6s both;
 }
 
 .card-inner {
     background: var(--die-surface);
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    border: 1px solid rgba(201, 162, 39, 0.15);
     padding: var(--space-lg);
     text-align: center;
     position: relative;
 }
 
-/* Card subtle corner accents */
 .card-inner::before,
 .card-inner::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--gold);
-    opacity: 0.4;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--gold-dark);
+    opacity: 0.3;
 }
 
 .card-inner::before {
@@ -560,15 +452,15 @@ body {
 }
 
 .header-line {
-    width: 25px;
+    width: 20px;
     height: 1px;
-    background: var(--gold);
+    background: var(--gold-dark);
     opacity: 0.5;
 }
 
 .header-text {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--gold);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -576,7 +468,7 @@ body {
 
 .resort-name {
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.25rem;
@@ -584,7 +476,7 @@ body {
 
 .resort-subtitle {
     font-family: var(--font-elegant);
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
     font-style: italic;
 }
@@ -599,20 +491,16 @@ body {
 }
 
 .divider-dot {
-    width: 4px;
-    height: 4px;
-    background: var(--gold);
+    width: 3px;
+    height: 3px;
+    background: var(--gold-dark);
     border-radius: 50%;
 }
 
 .divider-line {
-    width: 60px;
+    width: 50px;
     height: 1px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-}
-
-.divider-dot:last-child + .divider-line {
-    background: linear-gradient(90deg, transparent, var(--gold));
+    background: rgba(201, 162, 39, 0.2);
 }
 
 /* Trip Dates */
@@ -620,7 +508,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-md);
+    gap: var(--space-lg);
     margin-bottom: var(--space-lg);
 }
 
@@ -631,7 +519,7 @@ body {
 .date-block .day-name {
     display: block;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -640,7 +528,7 @@ body {
 .date-block .day-num {
     display: block;
     font-family: var(--font-display);
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 600;
     color: var(--gold);
     line-height: 1.1;
@@ -649,65 +537,34 @@ body {
 .date-block .month-name {
     display: block;
     font-family: var(--font-elegant);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
 }
 
-.date-separator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.sep-line {
-    width: 1px;
-    height: 15px;
-    background: var(--text-muted);
-    opacity: 0.3;
-}
-
-.sep-text {
+.date-separator .sep-text {
     font-family: var(--font-elegant);
-    font-size: 0.85rem;
-    font-style: italic;
+    font-size: 1.2rem;
     color: var(--text-muted);
 }
 
 /* Weekend Badge */
 .weekend-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
+    display: inline-block;
     padding: var(--space-sm) var(--space-md);
-    background: linear-gradient(135deg, var(--success) 0%, #5cc090 100%);
-    color: var(--wafer-deep);
-    border-radius: 20px;
+    background: rgba(201, 162, 39, 0.15);
+    border: 1px solid var(--gold-dark);
+    color: var(--gold);
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-}
-
-.badge-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--wafer-deep);
-    border-radius: 50%;
-    animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.3); }
 }
 
 /* Love Note */
 .love-note {
     text-align: center;
-    margin-top: var(--space-md);
-    animation: fadeUp 0.5s ease-out 1s both;
+    margin-top: var(--space-lg);
+    animation: fadeIn 1s ease-out 1s both;
 }
 
 .note-text {
@@ -717,77 +574,17 @@ body {
     color: var(--text-secondary);
 }
 
+.note-subtext {
+    font-family: var(--font-elegant);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-top: var(--space-xs);
+}
+
 .name-highlight {
     font-family: var(--font-display);
     color: var(--rose);
-    font-style: italic;
-}
-
-/* Floating Hearts */
-.floating-hearts {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 50;
-}
-
-.heart {
-    position: absolute;
-    bottom: -20px;
-    width: 12px;
-    height: 12px;
-    opacity: 0;
-}
-
-.heart::before,
-.heart::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: var(--rose);
-    border-radius: 50% 50% 0 0;
-}
-
-.heart::before {
-    left: 6px;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-}
-
-.heart::after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
-}
-
-.heart.h1 { left: 10%; animation: float 7s ease-in-out 0s infinite; }
-.heart.h2 { left: 25%; animation: float 8s ease-in-out 1.5s infinite; }
-.heart.h3 { left: 50%; animation: float 6s ease-in-out 0.5s infinite; }
-.heart.h4 { left: 75%; animation: float 9s ease-in-out 2s infinite; }
-.heart.h5 { left: 90%; animation: float 7s ease-in-out 3s infinite; }
-
-@keyframes float {
-    0% {
-        transform: translateY(0) scale(0);
-        opacity: 0;
-    }
-    10% {
-        transform: translateY(-10vh) scale(1);
-        opacity: 0.7;
-    }
-    90% {
-        transform: translateY(-90vh) scale(0.8);
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(-100vh) scale(0.5);
-        opacity: 0;
-    }
+    font-style: normal;
 }
 
 /* =====================================================
@@ -797,7 +594,7 @@ body {
 @media (min-width: 768px) {
     .die-frame {
         max-width: 420px;
-        padding: 16px;
+        padding: 14px;
     }
 
     .die-surface {
@@ -805,12 +602,8 @@ body {
     }
 
     .pad {
-        width: 12px;
-        height: 12px;
-    }
-
-    .main-title .line-1 {
-        font-size: 1.4rem;
+        width: 10px;
+        height: 10px;
     }
 
     .main-title .line-2 {
@@ -824,9 +617,9 @@ body {
     }
 
     .btn-yes {
-        width: 200px;
-        height: 58px;
-        font-size: 1.2rem;
+        width: 180px;
+        height: 54px;
+        font-size: 1.15rem;
     }
 
     .celebration-title .line-big {
@@ -834,29 +627,20 @@ body {
     }
 
     .resort-name {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .destination-card {
-        max-width: 380px;
+        max-width: 360px;
     }
 }
 
 @media (min-width: 1024px) {
     .main-title .line-2 {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
     }
 
     .celebration-title .line-big {
-        font-size: 2.5rem;
-    }
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        font-size: 2.4rem;
     }
 }
