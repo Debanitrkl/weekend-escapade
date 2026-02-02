@@ -560,6 +560,96 @@ body {
     letter-spacing: 1px;
 }
 
+/* =====================================================
+   ROAD TRIP ANIMATION
+   ===================================================== */
+
+.road-trip-container {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: var(--space-lg);
+    animation: fadeIn 0.8s ease-out 0.5s both;
+}
+
+.road-trip-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.location-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    fill: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.journey-text {
+    font-family: var(--font-elegant);
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: var(--space-sm);
+}
+
+/* Car Animation - follows the path */
+.car-group {
+    animation: drivePath 8s ease-in-out 1s forwards;
+    offset-path: path('M 30 170 Q 80 170, 100 140 T 160 100 Q 200 70, 240 80 T 320 50 Q 360 40, 380 30');
+    offset-rotate: auto;
+}
+
+@keyframes drivePath {
+    0% {
+        offset-distance: 0%;
+        opacity: 1;
+    }
+    100% {
+        offset-distance: 100%;
+        opacity: 1;
+    }
+}
+
+/* Fallback for browsers without offset-path */
+@supports not (offset-path: path('M 0 0')) {
+    .car-group {
+        transform: translate(30px, 170px);
+        animation: driveSimple 8s ease-in-out 1s forwards;
+    }
+
+    @keyframes driveSimple {
+        0% { transform: translate(30px, 170px) rotate(0deg); }
+        25% { transform: translate(100px, 140px) rotate(-20deg); }
+        50% { transform: translate(185px, 90px) rotate(-15deg); }
+        75% { transform: translate(280px, 60px) rotate(-10deg); }
+        100% { transform: translate(365px, 30px) rotate(-5deg); }
+    }
+}
+
+/* Headlight glow effect */
+.car-group rect[fill="#f0d060"] {
+    animation: headlightFlicker 0.5s ease-in-out infinite alternate;
+    animation-delay: 1s;
+}
+
+@keyframes headlightFlicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Forest trees subtle sway */
+.forest {
+    animation: treeSway 4s ease-in-out infinite alternate;
+    transform-origin: center bottom;
+}
+
+@keyframes treeSway {
+    0% { transform: rotate(-0.5deg); }
+    100% { transform: rotate(0.5deg); }
+}
+
 /* Love Note */
 .love-note {
     text-align: center;
@@ -585,6 +675,15 @@ body {
     font-family: var(--font-display);
     color: var(--rose);
     font-style: normal;
+}
+
+.note-maya {
+    font-family: var(--font-elegant);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-top: var(--space-md);
+    opacity: 0.8;
 }
 
 /* =====================================================

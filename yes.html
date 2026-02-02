@@ -26,6 +26,126 @@
             </h1>
         </div>
 
+        <!-- Road Trip Animation -->
+        <div class="road-trip-container">
+            <svg class="road-trip-svg" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet">
+                <!-- Road Path -->
+                <defs>
+                    <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#3d3560;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#1a1625;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- The winding road -->
+                <path id="roadPath"
+                      d="M 30 170
+                         Q 80 170, 100 140
+                         T 160 100
+                         Q 200 70, 240 80
+                         T 320 50
+                         Q 360 40, 380 30"
+                      fill="none"
+                      stroke="#2a2440"
+                      stroke-width="18"
+                      stroke-linecap="round"/>
+
+                <!-- Road center line (dashed) -->
+                <path d="M 30 170
+                         Q 80 170, 100 140
+                         T 160 100
+                         Q 200 70, 240 80
+                         T 320 50
+                         Q 360 40, 380 30"
+                      fill="none"
+                      stroke="#c9a227"
+                      stroke-width="1.5"
+                      stroke-dasharray="8 6"
+                      stroke-linecap="round"
+                      opacity="0.4"/>
+
+                <!-- Trees for Nagarhole (forest area) -->
+                <g class="forest" opacity="0.6">
+                    <!-- Tree group 1 -->
+                    <path d="M165 85 L170 70 L175 85 Z" fill="#2d4a3e"/>
+                    <path d="M165 78 L170 63 L175 78 Z" fill="#3d5a4e"/>
+                    <rect x="168" y="85" width="4" height="6" fill="#4a3828"/>
+
+                    <!-- Tree group 2 -->
+                    <path d="M180 95 L186 78 L192 95 Z" fill="#2d4a3e"/>
+                    <path d="M180 86 L186 69 L192 86 Z" fill="#3d5a4e"/>
+                    <rect x="184" y="95" width="4" height="6" fill="#4a3828"/>
+
+                    <!-- Tree group 3 -->
+                    <path d="M150 105 L156 88 L162 105 Z" fill="#2d4a3e"/>
+                    <path d="M150 96 L156 79 L162 96 Z" fill="#3d5a4e"/>
+                    <rect x="154" y="105" width="4" height="6" fill="#4a3828"/>
+
+                    <!-- Tree group 4 -->
+                    <path d="M195 75 L200 60 L205 75 Z" fill="#2d4a3e"/>
+                    <path d="M195 67 L200 52 L205 67 Z" fill="#3d5a4e"/>
+                    <rect x="198" y="75" width="4" height="5" fill="#4a3828"/>
+
+                    <!-- More trees -->
+                    <path d="M210 88 L215 73 L220 88 Z" fill="#2d4a3e"/>
+                    <path d="M225 70 L230 55 L235 70 Z" fill="#3d5a4e"/>
+                    <path d="M175 110 L180 95 L185 110 Z" fill="#2d4a3e"/>
+                </g>
+
+                <!-- Location Markers -->
+                <!-- Bangalore -->
+                <g class="location bangalore">
+                    <circle cx="30" cy="170" r="6" fill="#c9a227" filter="url(#glow)"/>
+                    <circle cx="30" cy="170" r="3" fill="#0f0d15"/>
+                    <text x="30" y="190" text-anchor="middle" class="location-label">BLR</text>
+                </g>
+
+                <!-- Nagarhole -->
+                <g class="location nagarhole">
+                    <circle cx="185" cy="90" r="5" fill="#3d5a4e" stroke="#c9a227" stroke-width="1.5"/>
+                    <text x="185" y="120" text-anchor="middle" class="location-label">Nagarhole</text>
+                </g>
+
+                <!-- Wayanad -->
+                <g class="location wayanad">
+                    <circle cx="380" cy="30" r="6" fill="#c9a227" filter="url(#glow)"/>
+                    <circle cx="380" cy="30" r="3" fill="#0f0d15"/>
+                    <text x="365" y="18" text-anchor="middle" class="location-label">Wayanad</text>
+                </g>
+
+                <!-- The Car -->
+                <g class="car-group">
+                    <!-- Car body -->
+                    <rect class="car-body" x="-15" y="-8" width="30" height="12" rx="3" fill="#c9a227"/>
+                    <!-- Car roof/cabin -->
+                    <path class="car-cabin" d="M-8 -8 L-5 -15 L12 -15 L15 -8 Z" fill="#a07a88"/>
+                    <!-- Windows -->
+                    <path d="M-6 -9 L-4 -14 L3 -14 L3 -9 Z" fill="#1a1625" opacity="0.8"/>
+                    <path d="M5 -9 L5 -14 L11 -14 L13 -9 Z" fill="#1a1625" opacity="0.8"/>
+                    <!-- Two people silhouettes -->
+                    <ellipse cx="-1" cy="-11" rx="2.5" ry="3" fill="#0f0d15"/>
+                    <ellipse cx="8" cy="-11" rx="2.5" ry="3" fill="#0f0d15"/>
+                    <!-- Wheels -->
+                    <circle cx="-8" cy="4" r="4" fill="#1a1625"/>
+                    <circle cx="-8" cy="4" r="2" fill="#3d3560"/>
+                    <circle cx="10" cy="4" r="4" fill="#1a1625"/>
+                    <circle cx="10" cy="4" r="2" fill="#3d3560"/>
+                    <!-- Headlights -->
+                    <rect x="14" y="-4" width="3" height="4" rx="1" fill="#f0d060"/>
+                </g>
+            </svg>
+
+            <!-- Journey label - Sarabhai style -->
+            <p class="journey-text">"Road trips are so middle class... unless it's to a Taj, darling."</p>
+        </div>
+
         <!-- Destination Card -->
         <div class="destination-card">
             <div class="card-inner">
@@ -71,12 +191,13 @@
             </div>
         </div>
 
-        <!-- Love Note -->
+        <!-- Love Note - Sarabhai style -->
         <div class="love-note">
             <p class="note-text">
                 Some things are inevitable, <span class="name-highlight">Ayushi</span>.
             </p>
-            <p class="note-subtext">This is one of them.</p>
+            <p class="note-subtext">This weekend getaway is one of them.</p>
+            <p class="note-maya">"Sophistication, nature, and us. How delightful!"</p>
         </div>
     </main>
 </body>
