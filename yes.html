@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip is ON! - Silicon Love</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Dancing+Script:wght@700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-celebration">
+    <!-- Circuit Board Background -->
+    <div class="circuit-bg"></div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Main Content -->
+    <main class="container celebration-container">
+        <!-- Success Animation -->
+        <div class="success-ring">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+            <div class="checkmark">
+                <svg viewBox="0 0 52 52">
+                    <circle cx="26" cy="26" r="25" fill="none"/>
+                    <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Main Celebration Text -->
+        <h1 class="celebration-title">
+            <span class="yay">Yayy!</span>
+            <span class="main-line">The Kerala Trip is</span>
+            <span class="on-text glow-text-gold">ON!</span>
+        </h1>
+
+        <!-- Destination Card -->
+        <div class="destination-card">
+            <div class="card-header">
+                <span class="card-icon">&#9830;</span>
+                <span class="card-label">DESTINATION LOCKED</span>
+                <span class="card-icon">&#9830;</span>
+            </div>
+
+            <div class="card-body">
+                <h2 class="resort-name">Taj Wayanad Resort</h2>
+                <p class="resort-location">
+                    <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Kerala, India
+                </p>
+
+                <div class="trip-dates">
+                    <div class="date-block">
+                        <span class="day">SAT</span>
+                        <span class="date">8</span>
+                        <span class="month">FEB</span>
+                    </div>
+                    <div class="date-connector">
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="date-block">
+                        <span class="day">SUN</span>
+                        <span class="date">9</span>
+                        <span class="month">FEB</span>
+                    </div>
+                </div>
+
+                <div class="weekend-badge">
+                    <span class="pulse-dot"></span>
+                    THIS WEEKEND!
+                </div>
+            </div>
+        </div>
+
+        <!-- Love Message -->
+        <div class="love-message">
+            <p class="message-line">
+                <span class="bracket gold">{</span>
+                Connection established
+                <span class="bracket gold">}</span>
+            </p>
+            <p class="signal-line">
+                Love signal: <span class="signal-value">MAXIMUM</span>
+                <span class="signal-bars">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </p>
+        </div>
+
+        <!-- Heart Animation -->
+        <div class="floating-hearts">
+            <span class="heart">&#10084;</span>
+            <span class="heart">&#10084;</span>
+            <span class="heart">&#10084;</span>
+            <span class="heart">&#10084;</span>
+            <span class="heart">&#10084;</span>
+        </div>
+    </main>
+
+    <script src="js/celebration.js"></script>
+</body>
+</html>

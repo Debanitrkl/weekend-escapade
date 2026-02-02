@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silicon Love Protocol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Dancing+Script:wght@700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-question">
+    <!-- Circuit Board Background -->
+    <div class="circuit-bg"></div>
+
+    <!-- Floating Circuit Elements -->
+    <div class="floating-elements">
+        <div class="chip chip-1"></div>
+        <div class="chip chip-2"></div>
+        <div class="chip chip-3"></div>
+        <div class="trace trace-1"></div>
+        <div class="trace trace-2"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Silicon Chip Frame -->
+        <div class="chip-frame">
+            <div class="chip-corner top-left"></div>
+            <div class="chip-corner top-right"></div>
+            <div class="chip-corner bottom-left"></div>
+            <div class="chip-corner bottom-right"></div>
+
+            <div class="content-wrapper">
+                <!-- Status Bar -->
+                <div class="status-bar">
+                    <span class="status-dot"></span>
+                    <span class="status-text">LOVE_PROTOCOL v2.0</span>
+                </div>
+
+                <!-- Main Question -->
+                <h1 class="main-title glow-text">
+                    Ready for<br>
+                    <span class="highlight">Kerala Trip?</span>
+                </h1>
+
+                <!-- Romantic Subtext -->
+                <p class="subtext typing-text">
+                    <span class="bracket">[</span>
+                    Initiating love protocol...
+                    <span class="bracket">]</span>
+                </p>
+
+                <!-- Date Display -->
+                <div class="date-chip">
+                    <span class="date-label">DATE:</span>
+                    <span class="date-value">Feb 8-9, 2026</span>
+                    <span class="date-badge">THIS WEEKEND!</span>
+                </div>
+
+                <!-- Buttons -->
+                <div class="button-container">
+                    <a href="yes.html" class="btn btn-yes">
+                        <span class="btn-glow"></span>
+                        <span class="btn-text">YES!</span>
+                        <span class="btn-subtext">Let's Go!</span>
+                    </a>
+
+                    <button class="btn btn-no" id="noButton">
+                        <span class="btn-text">No</span>
+                    </button>
+                </div>
+
+                <!-- Hint Text -->
+                <p class="hint-text" id="hintText"></p>
+            </div>
+        </div>
+
+        <!-- Bottom Decoration -->
+        <div class="wafer-ring"></div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
