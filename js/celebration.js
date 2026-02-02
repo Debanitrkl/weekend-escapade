@@ -19,22 +19,21 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Confetti configuration
+    // Confetti configuration - elegant colors
     const confettiConfig = {
-        particleCount: 150,
+        particleCount: 100,
         colors: [
-            '#FFD700',  // Gold
-            '#6B5B95',  // Purple
-            '#4A90D9',  // Blue
-            '#FFB6C1',  // Pink
-            '#4ADE80',  // Green
-            '#FFFFFF',  // White
+            '#d4af37',  // Gold
+            '#f0d060',  // Light gold
+            '#e8a4b8',  // Rose
+            '#7dd3a8',  // Soft green
+            '#b8b0c8',  // Lavender
         ],
-        shapes: ['square', 'circle', 'heart', 'chip'],
-        gravity: 0.3,
-        terminalVelocity: 5,
-        drag: 0.075,
-        duration: 5000,  // ms
+        shapes: ['square', 'circle', 'heart'],
+        gravity: 0.25,
+        terminalVelocity: 4,
+        drag: 0.08,
+        duration: 5000,
     };
 
     // Particle class
@@ -125,9 +124,6 @@
                     this.drawHeart();
                     break;
 
-                case 'chip':
-                    this.drawChip();
-                    break;
             }
 
             ctx.restore();
@@ -142,20 +138,6 @@
             ctx.fill();
         }
 
-        drawChip() {
-            const s = this.size;
-            // Chip body
-            ctx.fillRect(-s / 2, -s / 2, s, s);
-            // Chip pins
-            ctx.fillStyle = '#333';
-            const pinSize = s / 6;
-            for (let i = 0; i < 3; i++) {
-                // Top pins
-                ctx.fillRect(-s / 2 + (i + 0.5) * (s / 3) - pinSize / 2, -s / 2 - pinSize, pinSize, pinSize);
-                // Bottom pins
-                ctx.fillRect(-s / 2 + (i + 0.5) * (s / 3) - pinSize / 2, s / 2, pinSize, pinSize);
-            }
-        }
     }
 
     // Create particles
@@ -209,10 +191,10 @@
         animate();
 
         // Add celebration console message
-        console.log('%c🎉 YAYY! Kerala Trip is ON! 🎉',
-            'font-size: 20px; color: #4ADE80; background: #1A1A2E; padding: 15px;');
-        console.log('%c💕 Connection established. Love signal: MAXIMUM 💕',
-            'font-size: 14px; color: #FFB6C1;');
+        console.log('%cKerala, here we come!',
+            'font-size: 18px; color: #7dd3a8; background: #1a1625; padding: 12px;');
+        console.log('%cTaj Wayanad awaits...',
+            'font-size: 12px; color: #e8a4b8;');
     }
 
     // Start when page loads

@@ -3,81 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silicon Love Protocol</title>
+    <title>For Ayushi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Dancing+Script:wght@700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="page-question">
-    <!-- Circuit Board Background -->
-    <div class="circuit-bg"></div>
+    <!-- Silicon Wafer Background -->
+    <div class="wafer-bg">
+        <div class="wafer-gradient"></div>
+        <div class="die-grid"></div>
+        <div class="wafer-notch"></div>
+    </div>
 
-    <!-- Floating Circuit Elements -->
-    <div class="floating-elements">
-        <div class="chip chip-1"></div>
-        <div class="chip chip-2"></div>
-        <div class="chip chip-3"></div>
-        <div class="trace trace-1"></div>
-        <div class="trace trace-2"></div>
+    <!-- Wire Bond Frame -->
+    <div class="bond-wires">
+        <svg class="wire-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="wireGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:0.3" />
+                    <stop offset="50%" style="stop-color:#FFD700;stop-opacity:0.8" />
+                    <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:0.3" />
+                </linearGradient>
+            </defs>
+        </svg>
     </div>
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Silicon Chip Frame -->
-        <div class="chip-frame">
-            <div class="chip-corner top-left"></div>
-            <div class="chip-corner top-right"></div>
-            <div class="chip-corner bottom-left"></div>
-            <div class="chip-corner bottom-right"></div>
+        <!-- Silicon Die Card -->
+        <div class="die-frame">
+            <!-- Bond Pads -->
+            <div class="bond-pads top">
+                <span class="pad"></span><span class="pad"></span><span class="pad"></span>
+                <span class="pad"></span><span class="pad"></span><span class="pad"></span>
+            </div>
+            <div class="bond-pads bottom">
+                <span class="pad"></span><span class="pad"></span><span class="pad"></span>
+                <span class="pad"></span><span class="pad"></span><span class="pad"></span>
+            </div>
+            <div class="bond-pads left">
+                <span class="pad"></span><span class="pad"></span><span class="pad"></span>
+            </div>
+            <div class="bond-pads right">
+                <span class="pad"></span><span class="pad"></span><span class="pad"></span>
+            </div>
 
-            <div class="content-wrapper">
-                <!-- Status Bar -->
-                <div class="status-bar">
-                    <span class="status-dot"></span>
-                    <span class="status-text">LOVE_PROTOCOL v2.0</span>
+            <!-- Die Surface -->
+            <div class="die-surface">
+                <div class="die-pattern"></div>
+
+                <div class="content-wrapper">
+                    <!-- Greeting -->
+                    <p class="greeting">Hey <span class="name">Ayushi</span>,</p>
+
+                    <!-- Main Question -->
+                    <h1 class="main-title">
+                        <span class="line-1">Ready for our</span>
+                        <span class="line-2">Kerala Getaway?</span>
+                    </h1>
+
+                    <!-- Date Display -->
+                    <div class="date-display">
+                        <div class="date-line"></div>
+                        <span class="date-text">February 8-9, 2026</span>
+                        <div class="date-line"></div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="button-container">
+                        <a href="yes.html" class="btn btn-yes">
+                            <span class="btn-text">Yes, let's go!</span>
+                        </a>
+
+                        <button class="btn btn-no" id="noButton">
+                            <span class="btn-text">Hmm, no</span>
+                        </button>
+                    </div>
+
+                    <!-- Hint Text -->
+                    <p class="hint-text" id="hintText"></p>
                 </div>
 
-                <!-- Main Question -->
-                <h1 class="main-title glow-text">
-                    Ready for<br>
-                    <span class="highlight">Kerala Trip?</span>
-                </h1>
-
-                <!-- Romantic Subtext -->
-                <p class="subtext typing-text">
-                    <span class="bracket">[</span>
-                    Initiating love protocol...
-                    <span class="bracket">]</span>
-                </p>
-
-                <!-- Date Display -->
-                <div class="date-chip">
-                    <span class="date-label">DATE:</span>
-                    <span class="date-value">Feb 8-9, 2026</span>
-                    <span class="date-badge">THIS WEEKEND!</span>
-                </div>
-
-                <!-- Buttons -->
-                <div class="button-container">
-                    <a href="yes.html" class="btn btn-yes">
-                        <span class="btn-glow"></span>
-                        <span class="btn-text">YES!</span>
-                        <span class="btn-subtext">Let's Go!</span>
-                    </a>
-
-                    <button class="btn btn-no" id="noButton">
-                        <span class="btn-text">No</span>
-                    </button>
-                </div>
-
-                <!-- Hint Text -->
-                <p class="hint-text" id="hintText"></p>
+                <!-- Die Corner Marking -->
+                <div class="die-corner"></div>
             </div>
         </div>
-
-        <!-- Bottom Decoration -->
-        <div class="wafer-ring"></div>
     </main>
 
     <script src="js/script.js"></script>

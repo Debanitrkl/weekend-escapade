@@ -25,13 +25,13 @@
         animationDuration: 200,     // ms for dodge animation
     };
 
-    // Hints to show after dodges
+    // Hints to show after dodges - personalized for Ayushi
     const hints = [
-        "Nice try! 😏",
-        "The button doesn't want to be clicked!",
-        "Almost got it... not!",
-        "Keep trying! (It won't help)",
-        "Okay okay, just click YES! 💕"
+        "That button is shy, Ayushi...",
+        "It keeps running away!",
+        "Maybe it knows something...",
+        "Almost! ...not quite.",
+        "Just say yes already!"
     ];
 
     /**
@@ -137,7 +137,7 @@
         if (dodgeCount >= config.maxDodges) {
             noButton.classList.add('shrinking');
             isFixed = true;
-            hintText.textContent = "Just click YES already! 💕";
+            hintText.textContent = "Come on, you know you want to...";
         }
 
         // Reset dodging flag after animation
@@ -235,10 +235,10 @@
         });
 
         // Add some fun console messages
-        console.log('%c💜 Silicon Love Protocol Initiated 💜',
-            'font-size: 16px; color: #FFD700; background: #1A1A2E; padding: 10px;');
-        console.log('%cThe "No" button is feeling shy today...',
-            'font-size: 12px; color: #6B5B95;');
+        console.log('%cFor Ayushi',
+            'font-size: 16px; color: #d4af37; background: #1a1625; padding: 10px;');
+        console.log('%cThe "No" button seems to have a mind of its own...',
+            'font-size: 12px; color: #e8a4b8;');
     }
 
     // Start when DOM is ready

@@ -3,108 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trip is ON! - Silicon Love</title>
+    <title>It's a Yes!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Dancing+Script:wght@700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="page-celebration">
-    <!-- Circuit Board Background -->
-    <div class="circuit-bg"></div>
+    <!-- Silicon Wafer Background -->
+    <div class="wafer-bg celebration-bg">
+        <div class="wafer-gradient"></div>
+        <div class="die-grid"></div>
+    </div>
 
     <!-- Confetti Canvas -->
     <canvas id="confettiCanvas"></canvas>
 
     <!-- Main Content -->
     <main class="container celebration-container">
-        <!-- Success Animation -->
-        <div class="success-ring">
-            <div class="ring ring-1"></div>
-            <div class="ring ring-2"></div>
-            <div class="ring ring-3"></div>
-            <div class="checkmark">
-                <svg viewBox="0 0 52 52">
-                    <circle cx="26" cy="26" r="25" fill="none"/>
-                    <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                </svg>
-            </div>
+        <!-- Success Chip -->
+        <div class="success-chip">
+            <svg viewBox="0 0 60 60" class="check-icon">
+                <circle cx="30" cy="30" r="28" fill="none" stroke-width="2"/>
+                <path d="M18 30 L26 38 L42 22" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
 
         <!-- Main Celebration Text -->
-        <h1 class="celebration-title">
-            <span class="yay">Yayy!</span>
-            <span class="main-line">The Kerala Trip is</span>
-            <span class="on-text glow-text-gold">ON!</span>
-        </h1>
+        <div class="celebration-text">
+            <h1 class="celebration-title">
+                <span class="line-small">It's happening!</span>
+                <span class="line-big">Kerala, here we come</span>
+            </h1>
+        </div>
 
         <!-- Destination Card -->
         <div class="destination-card">
-            <div class="card-header">
-                <span class="card-icon">&#9830;</span>
-                <span class="card-label">DESTINATION LOCKED</span>
-                <span class="card-icon">&#9830;</span>
-            </div>
+            <div class="card-inner">
+                <!-- Card Header -->
+                <div class="card-header">
+                    <span class="header-line"></span>
+                    <span class="header-text">Our Destination</span>
+                    <span class="header-line"></span>
+                </div>
 
-            <div class="card-body">
-                <h2 class="resort-name">Taj Wayanad Resort</h2>
-                <p class="resort-location">
-                    <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                        <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                    Kerala, India
-                </p>
+                <!-- Resort Name -->
+                <h2 class="resort-name">Taj Wayanad</h2>
+                <p class="resort-subtitle">Resort & Spa, Kerala</p>
 
+                <!-- Divider -->
+                <div class="card-divider">
+                    <span class="divider-dot"></span>
+                    <span class="divider-line"></span>
+                    <span class="divider-dot"></span>
+                </div>
+
+                <!-- Dates -->
                 <div class="trip-dates">
                     <div class="date-block">
-                        <span class="day">SAT</span>
-                        <span class="date">8</span>
-                        <span class="month">FEB</span>
+                        <span class="day-name">Saturday</span>
+                        <span class="day-num">8</span>
+                        <span class="month-name">February</span>
                     </div>
-                    <div class="date-connector">
-                        <span class="arrow">→</span>
+                    <div class="date-separator">
+                        <span class="sep-line"></span>
+                        <span class="sep-text">to</span>
+                        <span class="sep-line"></span>
                     </div>
                     <div class="date-block">
-                        <span class="day">SUN</span>
-                        <span class="date">9</span>
-                        <span class="month">FEB</span>
+                        <span class="day-name">Sunday</span>
+                        <span class="day-num">9</span>
+                        <span class="month-name">February</span>
                     </div>
                 </div>
 
+                <!-- This Weekend Badge -->
                 <div class="weekend-badge">
-                    <span class="pulse-dot"></span>
-                    THIS WEEKEND!
+                    <span class="badge-dot"></span>
+                    This Weekend
                 </div>
             </div>
         </div>
 
-        <!-- Love Message -->
-        <div class="love-message">
-            <p class="message-line">
-                <span class="bracket gold">{</span>
-                Connection established
-                <span class="bracket gold">}</span>
-            </p>
-            <p class="signal-line">
-                Love signal: <span class="signal-value">MAXIMUM</span>
-                <span class="signal-bars">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </span>
+        <!-- Love Note -->
+        <div class="love-note">
+            <p class="note-text">
+                Can't wait to escape with you, <span class="name-highlight">Ayushi</span>
             </p>
         </div>
 
-        <!-- Heart Animation -->
+        <!-- Floating Hearts -->
         <div class="floating-hearts">
-            <span class="heart">&#10084;</span>
-            <span class="heart">&#10084;</span>
-            <span class="heart">&#10084;</span>
-            <span class="heart">&#10084;</span>
-            <span class="heart">&#10084;</span>
+            <span class="heart h1"></span>
+            <span class="heart h2"></span>
+            <span class="heart h3"></span>
+            <span class="heart h4"></span>
+            <span class="heart h5"></span>
         </div>
     </main>
 
