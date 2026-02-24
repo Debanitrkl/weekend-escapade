@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Drive - For Ayushi</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+        :root {
+            --ink-color: #D25F3E;
+            --paper-color: #F9F7F2;
+            --bg-color: #EAE8E0;
+            --font-display: 'Zilla Slab', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-body);
+            color: var(--ink-color);
+            overflow: hidden;
+        }
+
+        .texture-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.5;
+            z-index: 50;
+            mix-blend-mode: multiply;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+        }
+
+        .content-panel::-webkit-scrollbar {
+            width: 4px;
+        }
+        .content-panel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .content-panel::-webkit-scrollbar-thumb {
+            background-color: var(--ink-color);
+            border-radius: 2px;
+            opacity: 0.2;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .mobile-scroll-spacer {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            body {
+                overflow-y: auto;
+                height: auto;
+            }
+
+            #mainCard {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                max-width: 100%;
+                border: none;
+                box-shadow: none;
+            }
+
+            #artStage {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 38vh;
+                z-index: 5;
+                border: none;
+            }
+
+            .content-panel {
+                order: 1;
+                height: auto;
+                min-height: 100vh;
+                padding-bottom: 42vh;
+                overflow-y: visible;
+                position: relative;
+            }
+
+            .content-panel::after {
+                content: '';
+                position: fixed;
+                bottom: 38vh;
+                left: 0;
+                width: 100%;
+                height: 40px;
+                background: linear-gradient(to bottom, rgba(249,247,242,0), rgba(249,247,242,1));
+                z-index: 6;
+                pointer-events: none;
+            }
+
+            .mobile-scroll-spacer {
+                display: block;
+                height: 60vh;
+            }
+
+            #btnBar {
+                position: fixed;
+                bottom: 0.75rem;
+                right: 0.75rem;
+                z-index: 10;
+            }
+        }
+    </style>
+</head>
+<body class="w-screen h-screen flex items-center justify-center p-4 md:p-8 relative selection:bg-[#D25F3E] selection:text-[#F9F7F2]">
+
+    <!-- Noise texture overlay -->
+    <svg class="texture-overlay w-full h-full fixed top-0 left-0">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"></feTurbulence>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.4"></rect>
+    </svg>
+
+    <!-- Main card -->
+    <div id="mainCard" class="w-full max-w-[1000px] h-[90vh] md:h-[85vh] bg-[#F9F7F2] relative grid grid-cols-1 md:grid-cols-2 shadow-[0_20px_40px_rgba(0,0,0,0.05)] border border-[rgba(210,95,62,0.2)] z-10 overflow-hidden">
+
+        <!-- Left: Canvas / Art Stage -->
+        <div class="relative w-full h-1/2 md:h-full border-b md:border-b-0 md:border-r border-[#D25F3E] overflow-hidden bg-[#F9F7F2]" id="artStage">
+            <canvas id="sceneryCanvas" class="w-full h-full block"></canvas>
+        </div>
+
+        <!-- Right: Content Panel -->
+        <div class="content-panel h-1/2 md:h-full p-8 md:p-12 flex flex-col justify-between overflow-y-auto relative bg-[#F9F7F2]">
+
+            <!-- Top section -->
+            <div class="space-y-8">
+                <div class="flex items-start justify-between">
+                    <div class="w-8 h-8 rounded-full border border-[#D25F3E] flex items-center justify-center font-['Inter'] text-sm shrink-0">
+                        1
+                    </div>
+                    <div class="text-right shrink-0">
+                        <div class="text-xs uppercase tracking-widest opacity-60 pt-1.5 font-['Inter']">
+                            Bangalore &rarr; Beyond
+                        </div>
+                        <div class="text-[10px] uppercase tracking-widest opacity-40 font-['Inter'] mt-1">
+                            Thursday, 26 February 2026
+                        </div>
+                    </div>
+                </div>
+
+                <div class="font-['Inter'] text-sm leading-relaxed opacity-90 max-w-[85%]">
+                    Escaping the city gridlock.<br>
+                    A generative journey through the winding roads<br>
+                    of Karnataka, rendered in code.
+                </div>
+
+                <!-- Divider -->
+                <div class="w-full h-px bg-[#D25F3E] opacity-40"></div>
+
+                <!-- Heading -->
+                <h1 class="text-5xl md:text-6xl leading-[0.9] font-medium tracking-tight text-[#D25F3E]">
+                    Our Drive,<br>
+                    <span class="italic">Ayushi</span>
+                </h1>
+
+                <!-- Divider -->
+                <div class="w-full h-px bg-[#D25F3E] opacity-40"></div>
+            </div>
+
+            <!-- Bottom section -->
+            <div class="mt-8 md:mt-auto space-y-6">
+                <div class="font-['Zilla_Slab'] text-lg md:text-xl leading-relaxed whitespace-pre-wrap">The question isn't where we go,
+but who is in the passenger seat.
+
+They say time is a flat circle,
+a loop we drive through endlessly.
+But in this cycle, right here,
+the road opens up just for us.
+
+<span class="italic opacity-80 text-base">Sic Mundus Creatus Est.</span>
+Everything is connected,
+like the stars to the streetlights.</div>
+
+                <div class="font-['Inter'] text-xs uppercase tracking-widest opacity-70 pt-4">
+                    For You &mdash; 2026
+                </div>
+            </div>
+
+            <div class="mobile-scroll-spacer"></div>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div id="btnBar" class="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex gap-3">
+        <button id="restartBtn" class="bg-transparent border border-[#D25F3E] text-[#D25F3E] px-4 py-2 text-xs uppercase font-['Inter'] tracking-wider hover:bg-[#D25F3E] hover:text-[#F9F7F2] transition-colors duration-300">
+            Restart Engine
+        </button>
+        <button id="captureBtn" class="bg-transparent border border-[#D25F3E] text-[#D25F3E] px-4 py-2 text-xs uppercase font-['Inter'] tracking-wider hover:bg-[#D25F3E] hover:text-[#F9F7F2] transition-colors duration-300">
+            Capture
+        </button>
+    </div>
+
+    <script src="js/drive.js?v=2"></script>
+</body>
+</html>
